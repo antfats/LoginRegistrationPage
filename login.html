@@ -13,23 +13,45 @@
 </head>
 
 <body>
-    <div class="login-page">
-        <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="name" />
-                <input type="password" placeholder="password" />
-                <input type="text" placeholder="email address" />
-                <button>create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
-            </form>
-            <form class="login-form">
-                <input type="text" placeholder="username" id="userName">
-                <input type="password" placeholder="password" id="password">
-                <button id="submitBtn">login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-            </form>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+        Login
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal3Label">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="login-page">
+                        <div class="form">
+                            <form class="login-form">
+                                <input type="text" placeholder="username" id="userName">
+                                <input type="password" placeholder="password" id="password">
+                                <button id="submitBtn">login</button>
+                                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -43,6 +65,7 @@
 
     <script>
         $("#submitBtn").click(function () {
+            event.preventDefault();
 
             let userName = $("#userName").val().trim();
             let password = $("#password").val().trim();
@@ -50,6 +73,8 @@
             sessionStorage.setItem('userName', userName);
             sessionStorage.setItem('password', password);
 
+            $("#userName").val() = " ";
+            $("#password").val() = " ";
 
         });
 
