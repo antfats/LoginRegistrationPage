@@ -8,68 +8,93 @@
     <title>Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">UserName</label>
-                    <input type="email" class="form-control" id="inputUserName" placeholder="bob">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                </div>
-            </div>
+        <!-- Huge modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-backdrop="false" data-dismiss="modal"
+            data-target=".bd-example-modal-xl">
+            Huge modal
+        </button>
 
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                </div>
-            </div>
+        <div class="modal fade bd-example-modal-xl" id="regModal" tabindex="-1" role="dialog"
+            aria-labelledby="myHugeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" >
+                <div class="modal-content" style='background-color:rgb(106, 195, 255);'>
+
+                    <img src="fresh.png" class="center" alt="rip xd">
+
+                    <div class="container">
+
+                        <body style="background-color:rgb(106, 195, 255);">
+                    </div>
+                    <div class="container">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">UserName</label>
+                                    <input type="email" class="form-control" id="inputUserName" placeholder="bob">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                </div>
+                            </div>
 
 
-            <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <div class="form-group">
+                                <label for="inputAddress">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>UT</option>
+                                        <option>AZ</option>
+                                        <option>CO</option>
+                                        <option>CA</option>
+                                        <option>NM</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputPhoneNum">Phone Number</label>
+                                    <input type="text" class="form-control" id="inputPhoneNum">
+                                    <p class="lead">Please input as 1234567 instead of 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                    </div>
+                    <img src="happyapple.png" class="center" alt="rip xd">
+                </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>UT</option>
-                        <option>AZ</option>
-                        <option>CO</option>
-                        <option>CA</option>
-                        <option>NM</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputPhoneNum">Phone Number</label>
-                    <input type="text" class="form-control" id="inputPhoneNum">
-                    <p class="lead">Please input as 1234567 instead of 123-4567</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
+        </div>
     </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -83,6 +108,7 @@
         crossorigin="anonymous"></script>
 
     <script>
+
         $("#submitBtn").click(function () {
             let userName = $("#inputUserName").val().trim();
             let password = $("#inputPassword").val().trim();
@@ -102,6 +128,12 @@
             sessionStorage.setItem("zip", zip);
             sessionStorage.setItem("phoneNumber", phoneNumber);
 
+
+            $('#regModal').on('shown.bs.modal', function (e) {
+
+                var bLazy = new Blazy();
+
+            })
         })
 
     </script>
